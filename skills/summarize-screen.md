@@ -1,3 +1,8 @@
+---
+name: summarize-screen
+description: Convert a screen-call transcript into a candidate decision-record draft in the corpus convention. Use after a recruiter screen call where a transcript is available, when preparing a structured handoff record for the hiring manager.
+---
+
 # Skill: summarize-screen
 
 *Type: Per-call skill*

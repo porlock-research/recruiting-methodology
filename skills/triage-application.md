@@ -1,3 +1,8 @@
+---
+name: triage-application
+description: Triage an inbound recruiting application against a corpus of ADRs. Use when reviewing a candidate's resume and cover letter for a specific role. Produces tier-tagged signals with ADR citations and explicit handoff to the recruiter for Tier 3 judgment calls.
+---
+
 # Skill: triage-application
 
 *Type: Per-application skill*

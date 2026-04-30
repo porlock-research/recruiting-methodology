@@ -1,0 +1,12 @@
+{
+  "name": "recruiting-methodology",
+  "version": "0.1.0",
+  "description": "ADR-driven methodology for high-volume recruiting application triage. Long-term memory via ADRs, self-learning hooks, three-tier signal model that keeps humans in charge of judgment calls.",
+  "author": {
+    "name": "Manu Kapoor",
+    "url": "https://github.com/porlock-research"
+  },
+  "homepage": "https://github.com/porlock-research/recruiting-methodology",
+  "repository": "https://github.com/porlock-research/recruiting-methodology",
+  "keywords": ["recruiting", "hiring", "methodology", "adr", "agentic", "verification"]
+}

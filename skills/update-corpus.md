@@ -1,3 +1,8 @@
+---
+name: update-corpus
+description: Capture a finalized recruiting decision (especially a recruiter override of the system's recommendation) as a proposed new ADR ready to add to the corpus. Use when the recruiter's judgment differed from the system in a way worth capturing, or when a recurring pattern surfaces from `reflect`.
+---
+
 # Skill: update-corpus
 
 *Type: Capture skill*

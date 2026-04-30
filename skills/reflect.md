@@ -1,3 +1,8 @@
+---
+name: reflect
+description: Audit the recruiting corpus for staleness, patterns, contradictions, and consolidation opportunities. Use periodically (monthly cadence or after a burst of recruiting activity) to keep the corpus useful as it accumulates.
+---
+
 # Skill: reflect
 
 *Type: Meta skill (operates on the corpus itself)*
