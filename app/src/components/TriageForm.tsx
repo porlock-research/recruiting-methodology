@@ -1,16 +1,18 @@
 import { useState } from 'react';
+import { SAMPLE_APPLICATION, SAMPLE_ROLE } from '../lib/sample-application';
 
 interface Props {
   roles: string[];
   onSubmit: (role: string, application: string) => void;
   loading: boolean;
+  loadingMessage?: string;
 }
 
-const SAMPLE_PLACEHOLDER = `Paste a candidate's resume and cover letter here.
+const PLACEHOLDER = `Paste a candidate's resume and cover letter here.
 
-If you'd like a sample to try, see examples/sample-application.md in the repo.`;
+Or click "Use sample candidate" to try with a fictional test case (Marcus Chen, Senior Frontend Foundations).`;
 
-export function TriageForm({ roles, onSubmit, loading }: Props) {
+export function TriageForm({ roles, onSubmit, loading, loadingMessage }: Props) {
   const [role, setRole] = useState(roles[0]);
   const [application, setApplication] = useState('');
 
@@ -20,12 +22,17 @@ export function TriageForm({ roles, onSubmit, loading }: Props) {
     onSubmit(role, application);
   }
 
+  function handleUseSample() {
+    setRole(SAMPLE_ROLE);
+    setApplication(SAMPLE_APPLICATION);
+  }
+
   return (
     <form onSubmit={handleSubmit} className="space-y-7">
       <div>
         <label
           htmlFor="role"
-          className="block text-2xs uppercase tracking-[0.15em] text-ink-mute mb-2"
+          className="block text-kicker text-ink-mute mb-2"
         >
           Role
         </label>
@@ -54,23 +61,33 @@ export function TriageForm({ roles, onSubmit, loading }: Props) {
       </div>
 
       <div>
-        <label
-          htmlFor="application"
-          className="block text-2xs uppercase tracking-[0.15em] text-ink-mute mb-2"
-        >
-          Application materials
-        </label>
+        <div className="flex items-center justify-between mb-2">
+          <label
+            htmlFor="application"
+            className="text-kicker text-ink-mute"
+          >
+            Application materials
+          </label>
+          <button
+            type="button"
+            onClick={handleUseSample}
+            disabled={loading}
+            className="text-xs text-ink-mute hover:text-accent transition-colors underline decoration-1 underline-offset-[3px] disabled:opacity-30 disabled:cursor-not-allowed"
+          >
+            Use sample candidate
+          </button>
+        </div>
         <textarea
           id="application"
           value={application}
           onChange={(e) => setApplication(e.target.value)}
           disabled={loading}
           rows={14}
-          placeholder={SAMPLE_PLACEHOLDER}
+          placeholder={PLACEHOLDER}
           className="w-full px-3 py-3 bg-surface border border-border text-ink placeholder:text-ink-mute focus:outline-none focus:border-border-strong transition-colors resize-y disabled:opacity-50"
         />
-        <p className="mt-2 text-2xs text-ink-mute">
-          {application.length > 0 ? `${application.length.toLocaleString()} characters` : ' '}
+        <p className="mt-2 text-2xs text-ink-mute tabular-nums min-h-[1rem]">
+          {application.length > 0 ? `${application.length.toLocaleString()} characters` : ''}
         </p>
       </div>
 
@@ -78,7 +95,7 @@ export function TriageForm({ roles, onSubmit, loading }: Props) {
         <button
           type="submit"
           disabled={loading || !application.trim()}
-          className="px-5 py-2.5 bg-ink text-bg font-medium tracking-tight disabled:opacity-30 disabled:cursor-not-allowed hover:bg-accent transition-colors duration-200"
+          className="btn-lift px-5 py-2.5 bg-accent text-bg font-medium tracking-tight disabled:opacity-30 disabled:cursor-not-allowed hover:bg-accent-strong"
         >
           {loading ? (
             <span className="inline-flex items-center gap-2">
@@ -89,10 +106,8 @@ export function TriageForm({ roles, onSubmit, loading }: Props) {
             'Run triage'
           )}
         </button>
-        {loading && (
-          <p className="text-sm text-ink-mute">
-            Reading the corpus, applying hooks…
-          </p>
+        {loading && loadingMessage && (
+          <p className="text-sm text-ink-mute">{loadingMessage}</p>
         )}
       </div>
     </form>

@@ -98,6 +98,13 @@ Return ONLY valid JSON matching this exact shape (no preamble, no Markdown fence
 - Never weight against career gaps without Tier 3 hand-off
 - Tier 3 observations are recruiter-domain — surface, never decide`;
 
+function stripFence(text: string): string {
+  return text
+    .replace(/^```(?:json)?\s*\n?/, '')
+    .replace(/\n?```\s*$/, '')
+    .trim();
+}
+
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   const { request, env } = context;
 
@@ -155,10 +162,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   };
 
   const textContent = data.content.find(c => c.type === 'text')?.text ?? '';
+  const cleaned = stripFence(textContent);
 
   let triage;
   try {
-    triage = JSON.parse(textContent);
+    triage = JSON.parse(cleaned);
   } catch {
     return new Response(
       JSON.stringify({ error: 'Failed to parse triage', raw: textContent }),

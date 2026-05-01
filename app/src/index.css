@@ -6,43 +6,157 @@
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
-    @apply bg-bg text-ink font-body;
-    font-feature-settings: "kern", "liga";
+    @apply bg-bg text-ink font-body text-base;
+    font-feature-settings: "kern", "liga", "calt";
+    font-kerning: normal;
   }
 
   ::selection {
-    background-color: oklch(60% 0.10 30 / 0.25);
+    background-color: oklch(72% 0.13 205 / 0.28);
   }
 
+  /* Display headings: Bricolage Grotesque with stronger weight + tighter optical */
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
+    font-feature-settings: "kern", "ss01";
+    font-kerning: normal;
   }
 
-  /* Subtle focus ring using accent */
+  /* Numerals align in tabular contexts */
+  table, .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Focus ring */
   *:focus-visible {
-    outline: 2px solid oklch(45% 0.15 30 / 0.5);
-    outline-offset: 2px;
+    outline: 2px solid oklch(48% 0.08 205 / 0.55);
+    outline-offset: 3px;
     border-radius: 2px;
   }
 
-  textarea, input, select {
+  /* Form elements inherit body font properly */
+  textarea, input, select, button {
     font-feature-settings: "kern";
   }
 
-  /* Smooth selection on textarea */
   textarea {
-    line-height: 1.6;
+    line-height: 1.55;
+  }
+
+  /* Mono usage gets tighter letterforms */
+  .font-mono {
+    font-feature-settings: "kern", "calt", "ss01";
   }
 }
 
 @layer utilities {
-  /* Subtle bottom-edge underline that pairs with editorial display type */
-  .underline-edge {
-    background-image: linear-gradient(transparent calc(100% - 1px), oklch(78% 0.01 60) calc(100% - 1px));
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+  /* Fluid hero — Bricolage Grotesque at masthead scale */
+  .text-hero {
+    font-size: clamp(3rem, 6.5vw + 0.5rem, 7.5rem);
+    line-height: 0.94;
+    letter-spacing: -0.038em;
+    font-weight: 700;
+  }
+
+  /* Recommendation — the load-bearing answer */
+  .text-answer {
+    font-size: clamp(2.5rem, 4.5vw + 0.5rem, 4.75rem);
+    line-height: 0.96;
+    letter-spacing: -0.032em;
+    font-weight: 700;
+  }
+
+  /* Fluid section heading — present but yields to hero */
+  .text-section {
+    font-size: clamp(2rem, 2.5vw + 1rem, 3.5rem);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    font-weight: 600;
+  }
+
+  /* Subsection — clearly subordinate */
+  .text-subsection {
+    font-size: clamp(1.5rem, 1vw + 1rem, 1.875rem);
+    line-height: 1.15;
+    letter-spacing: -0.016em;
+    font-weight: 500;
+  }
+
+  /* Eyebrow / kicker label */
+  .text-kicker {
+    font-family: theme('fontFamily.mono');
+    font-size: 0.6875rem;
+    line-height: 1;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Lead paragraph after a heading */
+  .text-lead {
+    font-size: clamp(1.1875rem, 0.5vw + 1.0625rem, 1.375rem);
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+  }
+
+  /* Period flourish — accent (Jane teal) */
+  .period-accent {
+    color: oklch(48% 0.08 205);
+  }
+}
+
+/* Animations — restrained, editorial */
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-rise {
+  animation: fade-rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.fade-rise-1 { animation-delay: 0ms; }
+.fade-rise-2 { animation-delay: 80ms; }
+.fade-rise-3 { animation-delay: 160ms; }
+.fade-rise-4 { animation-delay: 240ms; }
+.fade-rise-5 { animation-delay: 320ms; }
+
+/* Subtle button lift on hover — tactile, brief */
+.btn-lift {
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.2s ease;
+}
+
+.btn-lift:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.btn-lift:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-rise,
+  .fade-rise-1,
+  .fade-rise-2,
+  .fade-rise-3,
+  .fade-rise-4,
+  .fade-rise-5 {
+    animation: none;
+  }
+  .btn-lift,
+  .btn-lift:hover {
+    transform: none;
+    transition: background-color 0.2s ease;
   }
 }

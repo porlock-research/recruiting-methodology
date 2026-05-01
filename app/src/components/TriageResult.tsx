@@ -1,4 +1,5 @@
 import type { TriageResult as TriageResultType, Signal, Tier3Observation, Tier3Concern } from '../lib/types';
+import { adrGitHubUrl } from '../lib/corpus';
 
 interface Props {
   result: TriageResultType;
@@ -7,63 +8,71 @@ interface Props {
 export function TriageResult({ result }: Props) {
   return (
     <article>
-      <header className="mb-14">
-        <p className="text-2xs uppercase tracking-[0.2em] text-ink-mute mb-3">
-          Recommendation
-        </p>
-        <h2 className="text-4xl md:text-5xl font-display font-medium tracking-tight text-ink mb-3 leading-[1.1]">
-          {result.recommendation}.
+      <header className="mb-14 fade-rise fade-rise-1">
+        <div className="flex items-center gap-4 mb-5">
+          <span aria-hidden className="block w-16 h-px bg-ink" />
+          <p className="text-kicker text-ink">Recommendation</p>
+        </div>
+        <h2 className="text-answer text-ink mb-4 font-display">
+          {result.recommendation}<span className="period-accent">.</span>
         </h2>
         <p className="text-ink-soft mb-6">
           For{' '}
-          <span className="text-ink">{result.candidate_name}</span>
+          <span className="text-ink font-medium">{result.candidate_name}</span>
           {' → '}
           <span className="italic">{result.role}</span>
         </p>
-        <p className="text-lg text-ink leading-relaxed max-w-prose">
+        <p className="text-lead text-ink max-w-prose">
           {result.summary}
         </p>
       </header>
 
-      <Section
-        label="Tier 1"
-        title="Floor signals"
-        sub="Eligibility. The system applies these without ceremony."
-        status={result.tier_1.status}
-      >
-        <SignalList signals={result.tier_1.signals} />
-      </Section>
+      <div className="fade-rise fade-rise-2">
+        <Section
+          label="Tier 1"
+          title="Floor signals"
+          sub="Eligibility. The system applies these without ceremony."
+          status={result.tier_1.status}
+        >
+          <SignalList signals={result.tier_1.signals} />
+        </Section>
+      </div>
 
-      <Section
-        label="Tier 2"
-        title="Pattern signals"
-        sub="Relevant experience and demonstrable skills, evaluated against the corpus."
-        status={result.tier_2.status}
-      >
-        <SignalList signals={result.tier_2.signals} />
-      </Section>
+      <div className="fade-rise fade-rise-3">
+        <Section
+          label="Tier 2"
+          title="Pattern signals"
+          sub="Relevant experience and demonstrable skills, evaluated against the corpus."
+          status={result.tier_2.status}
+        >
+          <SignalList signals={result.tier_2.signals} />
+        </Section>
+      </div>
 
-      <Section
-        label="Tier 3"
-        title="Human signals"
-        sub="Recruiter judgment required. The system surfaces; it does not decide."
-      >
-        <Tier3Block
-          observations={result.tier_3.observations}
-          concerns={result.tier_3.concerns}
-        />
-      </Section>
+      <div className="fade-rise fade-rise-4">
+        <Section
+          label="Tier 3"
+          title="Human signals"
+          sub="Recruiter judgment required. The system surfaces; it does not decide."
+        >
+          <Tier3Block
+            observations={result.tier_3.observations}
+            concerns={result.tier_3.concerns}
+          />
+        </Section>
+      </div>
 
+      <div className="fade-rise fade-rise-5">
       <Section label="Next step" title={result.next_step}>
         {result.screen_questions.length > 0 && (
           <div>
-            <p className="text-2xs uppercase tracking-[0.15em] text-ink-mute mb-3">
+            <p className="text-kicker text-ink-mute mb-3">
               Suggested screen questions
             </p>
             <ol className="space-y-3">
               {result.screen_questions.map((q, i) => (
-                <li key={i} className="text-ink-soft leading-relaxed pl-6 relative">
-                  <span className="absolute left-0 text-ink-mute font-mono text-sm">
+                <li key={i} className="text-ink-soft leading-relaxed pl-7 relative">
+                  <span className="absolute left-0 text-ink-mute font-mono text-sm tabular-nums">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   {q}
@@ -73,6 +82,7 @@ export function TriageResult({ result }: Props) {
           </div>
         )}
       </Section>
+      </div>
     </article>
   );
 }
@@ -92,18 +102,18 @@ function Section({
 }) {
   return (
     <section className="mb-14">
-      <header className="mb-6">
-        <p className="text-2xs uppercase tracking-[0.2em] text-ink-mute mb-2">
+      <header className="mb-7">
+        <p className="text-kicker text-ink-mute mb-3">
           {label}
         </p>
         <div className="flex items-baseline flex-wrap gap-x-4 gap-y-2">
-          <h3 className="text-2xl md:text-3xl font-display font-medium tracking-tight text-ink leading-tight">
+          <h3 className="text-subsection text-ink font-display">
             {title}
           </h3>
           {status && <StatusBadge status={status} />}
         </div>
         {sub && (
-          <p className="text-sm text-ink-mute mt-2 leading-relaxed">
+          <p className="text-sm text-ink-mute mt-2 leading-relaxed max-w-prose">
             {sub}
           </p>
         )}
@@ -128,8 +138,8 @@ function SignalList({ signals }: { signals: Signal[] }) {
             <div className="flex items-baseline gap-3 flex-wrap">
               <p className="text-ink font-medium">{s.name}</p>
               <a
-                href={`https://github.com/porlock-research/recruiting-methodology/blob/main/corpus/${s.adr.toLowerCase()}-${'-'.repeat(0)}.md`}
-                className="text-2xs uppercase tracking-[0.15em] font-mono text-ink-mute hover:text-accent transition-colors"
+                href={adrGitHubUrl(s.adr)}
+                className="text-kicker text-ink-mute hover:text-accent transition-colors tabular-nums"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -166,7 +176,7 @@ function Tier3Block({
     <div className="space-y-8">
       {hasObs && (
         <div>
-          <p className="text-2xs uppercase tracking-[0.15em] text-ink-mute mb-3">
+          <p className="text-kicker text-ink-mute mb-3">
             Observations
           </p>
           <ul className="space-y-4">
@@ -174,7 +184,7 @@ function Tier3Block({
               <li key={i} className="text-ink leading-relaxed">
                 <p>
                   {o.observation}
-                  <span className="ml-2 text-2xs uppercase tracking-[0.15em] font-mono text-ink-mute">
+                  <span className="ml-2 text-kicker text-ink-mute tabular-nums">
                     {o.adr}
                   </span>
                 </p>
@@ -188,7 +198,7 @@ function Tier3Block({
       )}
       {hasConcerns && (
         <div>
-          <p className="text-2xs uppercase tracking-[0.15em] text-ink-mute mb-3">
+          <p className="text-kicker text-ink-mute mb-3">
             Concerns surfaced for review
           </p>
           <ul className="space-y-5">
@@ -196,7 +206,7 @@ function Tier3Block({
               <li key={i} className="text-ink">
                 <p className="leading-relaxed">
                   {c.concern}
-                  <span className="ml-2 text-2xs uppercase tracking-[0.15em] font-mono text-ink-mute">
+                  <span className="ml-2 text-kicker text-ink-mute">
                     {c.adr}
                   </span>
                 </p>
