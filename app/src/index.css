@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-bg text-ink font-body;
+    font-feature-settings: "kern", "liga";
+  }
+
+  ::selection {
+    background-color: oklch(60% 0.10 30 / 0.25);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  /* Subtle focus ring using accent */
+  *:focus-visible {
+    outline: 2px solid oklch(45% 0.15 30 / 0.5);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  textarea, input, select {
+    font-feature-settings: "kern";
+  }
+
+  /* Smooth selection on textarea */
+  textarea {
+    line-height: 1.6;
+  }
+}
+
+@layer utilities {
+  /* Subtle bottom-edge underline that pairs with editorial display type */
+  .underline-edge {
+    background-image: linear-gradient(transparent calc(100% - 1px), oklch(78% 0.01 60) calc(100% - 1px));
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+}
