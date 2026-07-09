@@ -6,7 +6,7 @@
 
 ## Context
 
-Jane uses an explicit compensation framework where most hires enter at the "accomplished" tier within the role's band. For Senior Developer roles ($128k–$200k), the accomplished entry point is around $152k. For Staff and Senior Manager roles ($158.4k–$247.5k), it's around $188k. Years-of-experience expectations track this banding.
+Larkspur uses an explicit compensation framework where most hires enter at the "accomplished" tier within the role's band. For Senior Developer roles ($128k–$200k), the accomplished entry point is around $152k. For Staff and Senior Manager roles ($158.4k–$247.5k), it's around $188k. Years-of-experience expectations track this banding.
 
 ## Decision
 

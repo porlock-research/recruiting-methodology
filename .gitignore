@@ -1,1 +1,4 @@
 .DS_Store
+
+# Local agent config and memory — personal writing samples, never publish
+app/.claude/

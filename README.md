@@ -4,11 +4,11 @@
 
 ## What this is
 
-I'm Manu Kapoor — a candidate in Jane's interview process for Staff Developer, Frontend Foundations. After my screen call with Alain earlier today, I kept thinking about how the methodology I run on Pecking Order — long-term memory via ADRs and self-learning guardrails — might apply to recruiting work. This document is what came out of that thinking.
+I'm Manu Kapoor. I wrote this as a candidate in a clinical-software company's interview process, for a Staff Developer, Frontend Foundations role. After a screen call with one of their senior engineers, I kept thinking about how the methodology I run on Pecking Order (long-term memory via ADRs and self-learning guardrails) might apply to recruiting work. This document is what came out of that thinking. It was written for that company's team first; it's since been generalized into a standing demonstration that the approach transfers across domains, and the corpus and examples now use Larkspur Health, a fictional stand-in company.
 
 It's not a product. It's not a pitch. It's not asking for anything. It's a piece of thinking, with code and corpus as evidence that the thinking is real.
 
-The Jane mission is *help the helpers.* This document is in that spirit: a methodology that aims to reduce recruiter toil so recruiters can give every candidate a considered look. Same shape of problem, different surface.
+Their mission centers on reducing toil for the clinicians they serve. This document is in that spirit: a methodology that aims to reduce recruiter toil so recruiters can give every candidate a considered look. Same shape of problem, different surface.
 
 ## The problem this is about
 
@@ -25,7 +25,7 @@ That's the problem this methodology is about — not "summarize this call faster
 
 ## The methodology
 
-I run a project called Pecking Order — a production multiplayer game engine I'm building solo through my consultancy. Over the last two years it's accumulated 148 architectural decision records, 66 guardrail rules, and 21 custom Claude Code skills. The methodology produces high velocity (579 commits in the last 30 days) without losing testing discipline or architectural coherence. The structure transfers naturally to recruiting, in three pieces:
+I run a project called Pecking Order, a production multiplayer game engine I'm building solo through my consultancy. As of July 2026 its corpus runs to 150+ architectural decision records (the log reaches ADR-151), 62 guardrail rules, and 21 custom Claude Code skills. That guardrail count is down from 66 in May. The drop is the method working, not decaying: retiring a rule that's outlived its purpose is part of the discipline. A corpus that shrinks on purpose is a corpus being maintained. The velocity is real too: 1,302 commits since February 2026, with a peak of 579 in a single 30-day window in May. The methodology itself is now extracted and documented as its own repository, [guardian-loop](https://github.com/porlock-research/guardian-loop). The structure transfers naturally to recruiting, in three pieces:
 
 ### 1. ADRs as long-term memory
 
@@ -50,7 +50,7 @@ Skill definitions are in [`/skills`](./skills).
 
 ### 3. Self-learning hooks
 
-This is the part I think Alain reacted to most when we talked about it as "self-learning guardrails." In implementation, these are hooks — executable checks that fire at key points in the workflow.
+This is the part that got the strongest reaction when I described it in that conversation as "self-learning guardrails." In implementation, these are hooks: executable checks that fire at key points in the workflow.
 
 When the system makes a triage call that gets overridden by a human — say, the recruiter passes on a candidate the system flagged as a hold, or moves forward with someone the system flagged for pass — a hook captures the override. The recruiter runs `update-corpus` and a new ADR is generated, capturing the reason for the override. Another hook validates the format of the new ADR before it's added to the corpus.
 
@@ -98,7 +98,7 @@ To make this concrete: [`/methodology/worked-example.md`](./methodology/worked-e
 ## What this is and isn't
 
 - **It is** a methodology demonstration. A way of structuring recruiting knowledge so it accumulates rather than evaporates.
-- **It is not** a replacement for an ATS or a production recruiting tool. Jane already has those.
+- **It is not** a replacement for an ATS or a production recruiting tool. Any real recruiting team already has those.
 - **It is not** a system that makes hiring decisions on its own. Every triage and every override is a human call, and Tier 3 signals are explicitly the recruiter's domain. The system makes the recruiter faster and more consistent on the parts that should be faster and more consistent. It does not take over the parts that shouldn't be.
 - **It is not** a polished product. The corpus is a starting point. The skills are illustrations. The point is the methodology, not the implementation.
 
@@ -112,14 +112,24 @@ Three ways in, depending on your tools:
 
 **Copy-paste fallback (any LLM).** If you can't access the Project and don't use Claude Code, [`system-prompt.md`](./system-prompt.md) contains a standalone version of the methodology you can paste into any LLM chat (Claude, ChatGPT, Gemini, etc.). Reference the corpus and skill specs by URL as needed during the conversation.
 
+One honest note: the hosted Claude.ai Project and the demo app were built for the original conversation and may still carry that original framing until I refresh them.
+
 If you want to read the methodology end-to-end without using it, this README and the linked files are the artifact. The repo is the venue. The thinking is the work.
 
 There's a sample candidate at [`examples/sample-application.md`](./examples/sample-application.md) you can use to test any of the three paths.
+
+## The portfolio, if you want more
+
+Three repos, one methodology:
+
+- [pecking-order-prototype](https://github.com/porlock-research/pecking-order-prototype) — the production system the methodology was developed on.
+- [guardian-loop](https://github.com/porlock-research/guardian-loop) — the workflow itself, extracted with its operating history.
+- this repo — the same thinking applied to a non-engineering domain.
 
 ## Closing
 
 Recruiting decisions are knowledge work. Every hire and every pass is a piece of knowledge about what the team values, what works, what doesn't. Most of that knowledge evaporates because there's nowhere good for it to live. ADRs give it a home.
 
-This isn't a sales pitch. It's me thinking out loud about something I found interesting in our conversation. If any of it is useful to anyone at Jane, take it.
+This isn't a sales pitch. It's me thinking out loud about something I found interesting in that conversation. If any of it is useful to your team, take it.
 
 — Manu Kapoor

@@ -19,10 +19,10 @@ Reading what a team has publicly written and engaging with the substance of it i
 
 ## Examples
 
-- Reference to a Jane engineer's specific blog post on Module Federation deployment: STRONG.
-- Reference to Burrito design system mentioned in the JD: NEUTRAL (visible in the JD).
-- Reference to a Jane engineer's RubyConf talk on monolith-to-modular migration: STRONG.
-- Reference to "Jane's mission to help the helpers": NEUTRAL (visible in marketing).
+- Reference to a Larkspur engineer's specific blog post on Module Federation deployment: STRONG.
+- Reference to Lantern design system mentioned in the JD: NEUTRAL (visible in the JD).
+- Reference to a Larkspur engineer's conference talk on monolith-to-modular migration: STRONG.
+- Reference to Larkspur's public mission statement: NEUTRAL (visible in marketing).
 - Reference to a public ADR or RFC published by the hiring team: STRONG.
 
 ## Application

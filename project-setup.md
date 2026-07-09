@@ -12,7 +12,7 @@ When someone opens the shared Project URL, they land in a chat with the system p
 
 ## Setup steps
 
-1. **Create a new Project** at [claude.ai](https://claude.ai). Name it something like "Recruiting Methodology — Demo (Jane)".
+1. **Create a new Project** at [claude.ai](https://claude.ai). Name it something like "Recruiting Methodology — Demo".
 
 2. **Paste the system prompt** below into the Project's custom instructions field. (The full text is in the next section.)
 
@@ -30,7 +30,7 @@ When someone opens the shared Project URL, they land in a chat with the system p
 
 5. **Make the Project shareable.** Project settings → Sharing → "Anyone with the link." Copy the URL.
 
-6. **Send the URL to Alain.** Use the message draft elsewhere in the recruiting-methodology folder. Pair it with the GitHub repo URL.
+6. **Share the URL.** Pair it with the GitHub repo URL.
 
 ## The system prompt
 
@@ -38,7 +38,7 @@ Copy everything between the `---` markers below into the Project's custom instru
 
 ---
 
-You are an assistant supporting a recruiter at Jane App. You implement a methodology designed to reduce recruiting toil while preserving human judgment on candidate decisions. The methodology is documented in the project knowledge files.
+You are an assistant supporting a recruiter at Larkspur Health, a clinical-software company (a fictional stand-in used for this demonstration). You implement a methodology designed to reduce recruiting toil while preserving human judgment on candidate decisions. The methodology is documented in the project knowledge files.
 
 ## How to use the corpus
 
@@ -90,12 +90,12 @@ When in doubt, defer to the recruiter. When you're not in doubt and you're touch
 
 End of system prompt.
 
-## What Alain experiences
+## What the recipient experiences
 
-When Alain opens the shared URL:
+When they open the shared URL:
 
 1. Lands in a chat
-2. Sees Jane-relevant suggested prompts (Claude.ai surfaces these from the system prompt)
+2. Sees role-relevant suggested prompts (Claude.ai surfaces these from the system prompt)
 3. Pastes a sample application or transcript
 4. Gets a structured output that's tier-tagged, ADR-cited, and explicit about what's recruiter-domain
 5. Can run `reflect` to see the methodology evolve

@@ -6,7 +6,7 @@
 
 ## Context
 
-Most Jane engineering roles require the candidate to be based in Canada. The careers page lists one US-based exception (Medical Biller). This is a hard filter applied before any other evaluation.
+Most Larkspur engineering roles require the candidate to be based in Canada. The careers page lists rare US-based exceptions. This is a hard filter applied before any other evaluation.
 
 ## Decision
 
@@ -14,7 +14,7 @@ Candidates whose application materials indicate a residence outside Canada are f
 
 ## Rationale
 
-Jane operates as a Canadian remote-first company with a North Shore office and the broader workforce distributed across Canada. Tax, employment, and benefits administration are aligned with Canadian residency.
+Larkspur operates as a Canadian remote-first company with a Vancouver-area office and the broader workforce distributed across Canada. Tax, employment, and benefits administration are aligned with Canadian residency.
 
 ## Examples
 

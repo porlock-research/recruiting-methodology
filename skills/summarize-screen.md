@@ -15,7 +15,7 @@ Reads a screen-call transcript and produces a candidate decision-record draft in
 ## When to use
 
 - A screen call has concluded
-- A transcript is available (Jane's transcription pipeline produces these automatically)
+- A transcript is available (most call platforms produce these automatically)
 - You need a structured record to share with the hiring manager
 
 ## Inputs

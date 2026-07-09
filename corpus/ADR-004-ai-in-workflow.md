@@ -7,7 +7,7 @@
 
 ## Context
 
-Every Jane engineering JD names "AI integrated into current workflow with developed judgment about application." Jane wants candidates who use AI tools actively and have opinions about effectiveness. The bar is higher than "I use ChatGPT sometimes."
+Every Larkspur engineering JD names "AI integrated into current workflow with developed judgment about application." Larkspur wants candidates who use AI tools actively and have opinions about effectiveness. The bar is higher than "I use ChatGPT sometimes."
 
 ## Decision
 

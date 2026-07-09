@@ -32,7 +32,7 @@ export const CORPUS: ADR[] = [
     decision:
       'Candidates whose application materials indicate residence outside Canada are flagged as ineligible at Tier 1, except for explicit US-eligible roles.',
     rationale:
-      'Jane operates as a Canadian remote-first company. Tax, employment, and benefits are aligned with Canadian residency. Edge cases (relocation, dual residence) are surfaced for human review.',
+      'Larkspur operates as a Canadian remote-first company. Tax, employment, and benefits are aligned with Canadian residency. Edge cases (relocation, dual residence) are surfaced for human review.',
   },
   {
     id: 'ADR-002',

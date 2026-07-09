@@ -12,7 +12,7 @@ const ROLES = [
   'Senior Developer — Platform & Extensions',
   'Staff Developer — Frontend Foundations',
   'Staff Developer — Onboarding',
-  'Staff Engineer — Jane AI',
+  'Staff Engineer — AI Platform',
   'Software Development Manager',
 ];
 
@@ -63,13 +63,13 @@ function App() {
         <header className="mb-28 md:mb-36">
           <div className="flex items-center gap-4 mb-7">
             <span aria-hidden className="block w-16 h-px bg-ink" />
-            <p className="text-kicker text-ink">A small thing for Alain</p>
+            <p className="text-kicker text-ink">A working demonstration</p>
           </div>
           <h1 className="text-hero text-ink mb-8 font-display max-w-[14ch]">
             Recruiting&nbsp;methodology, running<span className="period-accent">.</span>
           </h1>
           <p className="text-lead text-ink-soft max-w-prose">
-            Paste an inbound application below. The methodology runs against a corpus of decision records grounded in Jane&rsquo;s open roles, returns a tier-tagged triage with cited reasoning, and hands off cleanly where recruiter judgment is needed.
+            Paste an inbound application below. The methodology runs against a corpus of decision records grounded in the open roles at Larkspur Health (a fictional clinical-software company), returns a tier-tagged triage with cited reasoning, and hands off cleanly where recruiter judgment is needed.
           </p>
           <p className="mt-5 text-sm text-ink-mute leading-relaxed max-w-prose">
             Built as a follow-up to our conversation. No sign-up. No install. Source on{' '}

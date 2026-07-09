@@ -27,7 +27,7 @@ export default {
         '6xl': ['4.5rem',    { lineHeight: '0.95', letterSpacing: '-0.032em' }],
       },
       colors: {
-        // Cool-tinted neutrals (hue 220) — harmonize with Jane's teal palette
+        // Cool-tinted neutrals (hue 220) — harmonize with the deep-teal accent
         bg: 'oklch(98% 0.003 220)',
         surface: 'oklch(96% 0.005 220)',
         'surface-2': 'oklch(93% 0.01 220)',
@@ -36,7 +36,7 @@ export default {
         'ink-mute': 'oklch(52% 0.008 220)',
         border: 'oklch(88% 0.008 220)',
         'border-strong': 'oklch(76% 0.01 220)',
-        // Jane-aligned accent: deep teal #027989 + supporting tones
+        // Accent: deep teal #027989 + supporting tones
         accent: 'oklch(48% 0.08 205)',
         'accent-strong': 'oklch(40% 0.08 205)',
         'accent-soft': 'oklch(72% 0.13 205)',

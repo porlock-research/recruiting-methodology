@@ -55,7 +55,7 @@ export function TechnicalDetails() {
             Each ADR is a one-page record with context, decision, rationale, examples, application, and a boundary clause. Tier 1 covers eligibility; Tier 2 covers patterns; Tier 3 stays in the recruiter&rsquo;s domain — the system surfaces, never decides.
           </p>
           <p className="text-sm text-ink-soft leading-relaxed mt-3">
-            Grounded in five real Jane open roles: Senior Frontend, Senior Backend, Staff Frontend Foundations, Staff Onboarding, Software Development Manager.
+            Grounded in five realistic open roles, modeled on real postings: Senior Frontend, Senior Backend, Staff Frontend Foundations, Staff Onboarding, Software Development Manager.
           </p>
         </Block>
 

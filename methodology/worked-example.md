@@ -1,12 +1,12 @@
 # Worked example: end-to-end loop
 
-This walks through one full triage loop against a real Jane opening, with a fictional candidate. The point is to make the methodology concrete — including the moment the system stops and hands the decision back to the recruiter.
+This walks through one full triage loop against a realistic opening at Larkspur Health — the fictional clinical-software company standing in for the real one this was originally written for — with a fictional candidate. The point is to make the methodology concrete — including the moment the system stops and hands the decision back to the recruiter.
 
 ## The role
 
-[Senior Developer — Frontend Foundations](https://jane.app/careers/31a9e38d-1ca3-4d68-8ea1-a0e397b32413/senior-developer-frontend-foundations).
+Senior Developer — Frontend Foundations at Larkspur Health (fictional; role details modeled on a real posting).
 
-Reports to Hunter Jansen. The team is "actively replacing legacy patterns with modern, scalable infrastructure." Stack includes webpack/rspack/Vite, Module Federation, and the Burrito design system (web + React Native). Comp band $128k–$200k, accomplished hires around $152k.
+The team is "actively replacing legacy patterns with modern, scalable infrastructure." Stack includes webpack/rspack/Vite, Module Federation, and the Lantern design system (web + React Native). Comp band $128k–$200k, accomplished hires around $152k.
 
 The corpus has ADRs covering this role at all three signal tiers. Highlights of what's loaded:
 
@@ -23,7 +23,7 @@ See `/corpus/decisions.md` for the full index. The four most-referenced ADRs in 
 
 ## The candidate
 
-**Priya Krishnamurthy.** Toronto, ON. 12 years frontend across mid-stage startups and one fintech. Currently Tech Lead at PayKit (fictional), where she led a Module Federation rollout across four teams. Public blog with five posts on AI-assisted development with concrete code examples. Cover letter mentions Burrito by name and asks a specific question about Module Federation deployment patterns at scale.
+**Priya Krishnamurthy.** Toronto, ON. 12 years frontend across mid-stage startups and one fintech. Currently Tech Lead at PayKit (fictional), where she led a Module Federation rollout across four teams. Public blog with five posts on AI-assisted development with concrete code examples. Cover letter mentions Lantern by name and asks a specific question about Module Federation deployment patterns at scale.
 
 Application materials in `/example-materials/priya-krishnamurthy/`.
 
@@ -49,7 +49,7 @@ The recruiter runs the skill. The system reads the application, queries the corp
 - Observability familiarity: PRESENT (Sentry mentioned in PayKit context).
 
 **Tier 3 — Human signals (recruiter judgment required):**
-- Specific engagement with this role: STRONG. Cover letter names Burrito specifically and asks a concrete technical question about Module Federation deployment at scale. This is not a generic letter.
+- Specific engagement with this role: STRONG. Cover letter names Lantern specifically and asks a concrete technical question about Module Federation deployment at scale. This is not a generic letter.
 - Story coherence: STRONG. 12-year arc shows steady growth into platform/lead work; fintech experience is adjacent to clinical fintech in the kind of regulatory and reliability constraints involved.
 - Plausibility of growth: PRESENT. Tech Lead role is appropriate for current career stage.
 - **Concerns surfaced for recruiter review:**
@@ -70,7 +70,7 @@ The Tier 1 and Tier 2 signals are strong enough to clear the floor. The Tier 3 c
 
 ## Step 2: Recruiter review
 
-The recruiter reads the triage and agrees with the recommendation. They notice the system surfaced the cover-letter engagement signal but didn't weight it as heavily as they would have. Specifically, Priya's letter referenced a topic the team has been writing about publicly — that's a deeper level of engagement than just naming Burrito. The recruiter wants the corpus to learn this distinction.
+The recruiter reads the triage and agrees with the recommendation. They notice the system surfaced the cover-letter engagement signal but didn't weight it as heavily as they would have. Specifically, Priya's letter referenced a topic the team has been writing about publicly — that's a deeper level of engagement than just naming Lantern. The recruiter wants the corpus to learn this distinction.
 
 They run `update-corpus` with the override note.
 
@@ -93,10 +93,10 @@ The system drafts:
 **Rationale.** Reading what a team has publicly written, and engaging with the substance of it, is rare. It indicates genuine interest in the work, not just the role.
 
 **Examples.**
-- Reference to a Jane engineer's specific blog post on Module Federation deployment: STRONG.
-- Reference to Burrito design system mentioned in the JD: NEUTRAL (visible in the JD).
-- Reference to a Jane engineer's RubyConf talk: STRONG.
-- Reference to "Jane's mission": NEUTRAL (visible in marketing).
+- Reference to a Larkspur engineer's specific blog post on Module Federation deployment: STRONG.
+- Reference to Lantern design system mentioned in the JD: NEUTRAL (visible in the JD).
+- Reference to a Larkspur engineer's conference talk: STRONG.
+- Reference to "Larkspur's mission": NEUTRAL (visible in marketing).
 
 **Application.** The `triage-application` skill should explicitly check for engagement with team-specific public work and flag it separately from JD-visible references. Future candidates whose cover letters demonstrate this kind of research engagement should be weighted toward move-forward.
 
@@ -104,7 +104,7 @@ The system drafts:
 
 ---
 
-The recruiter reviews, makes one edit (clarifying that "team-specific" means the actual hiring team, not Jane broadly), and accepts. The new ADR is added to the corpus and indexed in `decisions.md`.
+The recruiter reviews, makes one edit (clarifying that "team-specific" means the actual hiring team, not the company broadly), and accepts. The new ADR is added to the corpus and indexed in `decisions.md`.
 
 ## Step 4: The corpus is one piece smarter
 

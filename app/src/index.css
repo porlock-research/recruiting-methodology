@@ -103,7 +103,7 @@
     letter-spacing: -0.005em;
   }
 
-  /* Period flourish — accent (Jane teal) */
+  /* Period flourish — deep-teal accent */
   .period-accent {
     color: oklch(48% 0.08 205);
   }

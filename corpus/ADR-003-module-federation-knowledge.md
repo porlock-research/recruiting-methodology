@@ -7,7 +7,7 @@
 
 ## Context
 
-Jane's frontend platform is migrating to Module Federation. The Foundations team needs candidates who can contribute within established MF patterns and define new expansions. Theoretical knowledge is not enough.
+Larkspur's frontend platform is migrating to Module Federation. The Foundations team needs candidates who can contribute within established MF patterns and define new expansions. Theoretical knowledge is not enough.
 
 ## Decision
 

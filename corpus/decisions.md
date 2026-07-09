@@ -1,6 +1,6 @@
 # Decisions Index
 
-The corpus of stable triage decisions for Jane recruiting, organized by signal tier. Each ADR is a one-page record. New entries are added by `update-corpus` when a recruiter override or a `reflect` cycle surfaces a pattern worth capturing.
+The corpus of stable triage decisions for recruiting at Larkspur Health — the fictional clinical-software company used throughout this demonstration, organized by signal tier. Each ADR is a one-page record. New entries are added by `update-corpus` when a recruiter override or a `reflect` cycle surfaces a pattern worth capturing.
 
 ## By tier
 

@@ -8,7 +8,7 @@ I'm applying for the Senior Developer — Frontend Foundations role. The platfor
 
 At LendCircle (a Vancouver-based fintech), I led our Module Federation migration across three product teams. We landed in a place where teams ship independently while consuming shared infrastructure. Getting the deployment topology right took longer than the technical setup; in retrospect, I'd have invested more time in adoption documentation upfront.
 
-A specific question I have for the Foundations team: how did you arrive at webpack vs. rspack for Burrito? I migrated our LendCircle build pipeline from webpack to rspack last year and saw significant CI time reduction (~40%), but I'm aware the migration trade-offs differ depending on the codebase shape and the consumer surface area. Curious about your thinking on it.
+A specific question I have for the Foundations team: how did you arrive at webpack vs. rspack for Lantern? I migrated our LendCircle build pipeline from webpack to rspack last year and saw significant CI time reduction (~40%), but I'm aware the migration trade-offs differ depending on the codebase shape and the consumer surface area. Curious about your thinking on it.
 
 I work with AI tools daily — Cursor and Claude Code — and have written publicly about the practice (a 4-part series on my blog at marcuschen.dev). I think there's still a lot to figure out about AI-assisted platform engineering, and I'd want to be on a team thinking about it actively.
 

@@ -7,7 +7,7 @@
 
 ## Context
 
-Jane's frontend stack runs on webpack, rspack, and Vite. The Foundations team needs candidates who understand the underlying mechanics, not just users of the tools. The JD calls for "modern frontend build tooling expertise with understanding of underlying mechanics."
+Larkspur's frontend stack runs on webpack, rspack, and Vite. The Foundations team needs candidates who understand the underlying mechanics, not just users of the tools. The JD calls for "modern frontend build tooling expertise with understanding of underlying mechanics."
 
 ## Decision
 

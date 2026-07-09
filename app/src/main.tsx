@@ -9,7 +9,7 @@ console.log(
   'font-family: "Bricolage Grotesque", system-ui; font-size: 18px; font-weight: 700; color: oklch(45% 0.15 30);'
 );
 console.log(
-  '%cBy Manu Kapoor — built as a follow-up to a conversation with Alain at Jane.',
+  '%cBy Manu Kapoor — built as a follow-up to a conversation during my own interview process.',
   'font-family: "Atkinson Hyperlegible", system-ui; font-size: 12px; color: oklch(35% 0.01 60);'
 );
 console.log(
