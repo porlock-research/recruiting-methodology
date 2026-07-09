@@ -106,13 +106,11 @@ To make this concrete: [`/methodology/worked-example.md`](./methodology/worked-e
 
 Three ways in, depending on your tools:
 
-**Claude.ai Project (web, easiest for non-developers).** [Open the Project](https://claude.ai/project/019ddbda-133d-715a-906b-fab850ed5ba0). System prompt is loaded with the methodology rules; the corpus, skills, and hooks are uploaded as project knowledge. Paste a sample application or screen transcript, see the methodology fire. Requires a Claude account.
+**Hosted demo (browser, no account needed).** [recruiting-methodology.pages.dev](https://recruiting-methodology.pages.dev). Paste an application — or load the sample candidate with one click — and watch the methodology run: tier-tagged triage, ADR citations, and the hand-off where recruiter judgment takes over. The app's source is in [`/app`](./app).
 
 **Claude Code plugin (CLI, for developers).** This repo is structured as a Claude Code plugin. Clone it and install via the plugin's directory, or reference it from your `.claude-plugin/` config. Skill specs are wired up with proper frontmatter; hook docs describe behavioral checks. The corpus lives in `corpus/`; treat as your starting seed.
 
-**Copy-paste fallback (any LLM).** If you can't access the Project and don't use Claude Code, [`system-prompt.md`](./system-prompt.md) contains a standalone version of the methodology you can paste into any LLM chat (Claude, ChatGPT, Gemini, etc.). Reference the corpus and skill specs by URL as needed during the conversation.
-
-One honest note: the hosted Claude.ai Project and the demo app were built for the original conversation and may still carry that original framing until I refresh them.
+**Copy-paste fallback (any LLM).** If you don't use Claude Code, [`system-prompt.md`](./system-prompt.md) contains a standalone version of the methodology you can paste into any LLM chat (Claude, ChatGPT, Gemini, etc.). Reference the corpus and skill specs by URL as needed during the conversation.
 
 If you want to read the methodology end-to-end without using it, this README and the linked files are the artifact. The repo is the venue. The thinking is the work.
 

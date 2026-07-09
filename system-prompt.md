@@ -1,6 +1,6 @@
 # System prompt — copy-paste fallback
 
-If you can't access the [Claude.ai Project](https://claude.ai/project/019ddbda-133d-715a-906b-fab850ed5ba0) (different plan tier, different AI tool), you can use the methodology by pasting the prompt below into a fresh chat with any capable LLM (Claude, ChatGPT, Gemini).
+If the [hosted demo](https://recruiting-methodology.pages.dev) isn't enough and you don't use Claude Code, you can use the methodology by pasting the prompt below into a fresh chat with any capable LLM (Claude, ChatGPT, Gemini).
 
 For the corpus and skill specs to be reachable, paste in the relevant ADR or skill spec when needed — they live in this repo at [`/corpus`](./corpus) and [`/skills`](./skills).
 
